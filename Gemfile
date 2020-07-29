@@ -18,6 +18,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# A fast JSON:API serializer for Ruby (fork of Netflix/fast_jsonapi)
+gem 'jsonapi-serializer'
+
+# The ultimate pagination ruby gem
+gem 'pagy'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -42,6 +48,12 @@ group :development, :test do
 
   # Library for stubbing and setting expectations on HTTP requests in Ruby.
   gem 'webmock'
+
+  # A runtime developer console and IRB alternative with powerful introspection capabilities.
+  gem 'pry'
+
+  # This is a small gem which causes rails console to open pry.
+  gem 'pry-rails'
 end
 
 group :development do
@@ -50,12 +62,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-  # A runtime developer console and IRB alternative with powerful introspection capabilities.
-  gem 'pry'
-
-  # This is a small gem which causes rails console to open pry.
-  gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
