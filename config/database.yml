@@ -2,14 +2,19 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  host: <%= ENV['DATABASE_HOST'] || '127.0.0.1' %>
 development:
   <<: *default
-  database: api_dev
+  database: <%= ENV['DATABASE_NAME'] || 'rails-app-dev' %>
+  username: <%= ENV['DATABASE_USER'] || 'postgres' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'postgres' %>
 test:
   <<: *default
-  database: api_test
+  database: <%= 'rails-app-test' %>
 production:
   <<: *default
-  database: api
-  username: api-username
-  password: <%= ENV['RAILS_API_TEMPLATE_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_NAME']%>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+

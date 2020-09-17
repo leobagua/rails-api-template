@@ -1,4 +1,4 @@
-# Rails API
+# Rails API Template
 
 ### Ruby version:
 ```ruby
@@ -18,4 +18,9 @@ PostgreSQL
 ### Run
 ```bash
 rails db:create db:migrate && rails s
+```
+
+### Run with Docker
+```bash
+docker-compose up --build
 ```
